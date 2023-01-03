@@ -16,20 +16,36 @@
 		<nav>
 			<a  title="inicio" href="../index.php"><img src= "../imagenes_vistas/black2.jpg" width="180" height="80"></a>
 			<a href="../levantamiento/levantamiento_view.php">Levantamiento</a>
+            <a href="avance_view.php">Reporte diario</a>
 			<a href="../reporte_final/proyectos.php">Reporte Final</a>
 		</nav>
 	</header>
+    <div class="page-header bg-dark text-white text-center">
+		<span class="h4">Reporte Diario</span>
+	</div>
 
     <?php
         session_start();
         include_once("C:/xampp/htdocs/instalaciones/conexion.php");
         $idproyect = $_REQUEST['id_proyect'];
 
+        $sentence = 'select nombre_proyecto from proyecto where id = ' . $idproyect;
+        $query = pg_query($conexion,$sentence );
+        $arr = pg_fetch_array($query, 0, PGSQL_NUM);
+        ?>
+        <div class="page-header bg-dark text-white text-center">
+		    <span class="h4">Obra: <?php   echo $arr[0];   ?></span>
+        </div>
+        <br><br>
+        <?php
+
+
+
         $sentence = 'select * from avance where id_proyecto = ' . $idproyect;
         $query = pg_query($conexion,$sentence );
-        ?>
         
-        <?php
+        
+        
             while ($row = pg_fetch_row($query)) {
                 //echo "Ingeniero: $row[1]  Imagen: $row[2]  Hora: $row[3] Dia: $row[4]";
                 ?>

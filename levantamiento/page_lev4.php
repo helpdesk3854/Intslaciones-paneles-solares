@@ -3,20 +3,25 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../estilo.css">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<title>Personal de Campo</title>
 </head>	
 
 <body>
-        
-    <div class="page-header bg-primary text-white text-center">
+    <header>
+		<nav>
+            <img src= "../imagenes_vistas/black2.jpg" width="180" height="80">
+		</nav>
+	</header>
+    <div class="page-header bg-dark text-white text-center">
 		<span class="h4">Levantamiento</span>
 	</div>
     <br><br>
 
     <form  name="formulario" action="query_lev4.php" method="POST" enctype="multipart/form-data" style="width:90%;margin:0 auto;" name="formulario" onsubmit="document.forms['formulario']['enviar'].disabled=true;" >
         <fieldset>
-            <legend class="text-center header text-success">Fotos De Los Puntos cardinales(Para verificar que no tengamos sombreados)</legend>
+            <legend class="text-center header text-danger">Fotos De Los Puntos cardinales(Para verificar que no tengamos sombreados)</legend>
             <h4>Evitar el uso de zoom</h4>
             <br><br>
             <label>Norte</label>
@@ -35,7 +40,7 @@
             <br><br>
             <input type="reset" value="Borrar" >
             <br><br>
-            <input type="submit" name="enviar" value="Siguiente">
+            <input type="submit" class="btn btn-secondary form-control" name="enviar" value="Siguiente">
         </fieldset>
     </form>
 

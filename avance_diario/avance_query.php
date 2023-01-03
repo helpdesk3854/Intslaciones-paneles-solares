@@ -9,14 +9,20 @@
 </head>
 
 <body>
-    <header>
+<header>
 		<nav>
-			<img src= "../imagenes_vistas/black2.jpg" width="180" height="80">
-            <a href="avance.php">Avance diario</a>
+            <a  title="inicio" href="../obra.php"><img src= "../imagenes_vistas/black2.jpg" width="180" height="80"></a>
+			<a href="../levantamiento/ingeniero_lev.php">Crear un Levantamiento</a>
+			<a href="avance.php">Reporte diario</a>
+			<a href="../reporte_final/ingeniero.php">Crear un reporte final</a>
 		</nav>
 	</header>
 
     <h1>Imagen cargada correctamente</h1>
+
+    <a href="avance.php">
+        <button class="btn btn-outline-danger" text-align="center" >Preione para agregar otra imagen</button>
+    </a> 
 <?php
     include_once("../conexion.php");
     require_once("../subir.php");

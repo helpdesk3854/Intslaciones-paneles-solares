@@ -11,23 +11,21 @@
 <body>
     <header>
 		<nav>
-			<img src= "../imagenes_vistas/black2.jpg" width="180" height="80">
+            <a  title="inicio" href="../obra.php"><img src= "../imagenes_vistas/black2.jpg" width="180" height="80"></a>
 			<a href="ingeniero_lev.php">Crear un Levantamiento</a>
-			<a href="../avance_diario/avance.php">Avance diario</a>
+			<a href="../avance_diario/avance.php">Reporte diario</a>
 			<a href="../reporte_final/ingeniero.php">Crear un reporte final</a>
 		</nav>
 	</header>
-    <div class="page-header bg-primary text-white text-center">
-		<span class="h4">Levantamiento de obra</span>
-	</div>
 
+    <div class="page-header bg-dark text-white text-center">
+		<span class="h4">Levantamiento</span>
+	</div>
     
     <br><br>
-
     <form action="query_ingeniero_lev.php" method="POST" enctype="multipart/form-data" style="width:90%;margin:0 auto;">
 
         <fieldset>
-
             <div class="form-group">
                 <label for="">Nombre del proyecto</label>
                 <select  name="id_proyecto" id="seleccion">
@@ -37,7 +35,7 @@
                     $query = pg_query($conexion, 'select id, nombre_proyecto from proyecto where activo = true');
                     while ($datos= pg_fetch_array($query)) {
                         ?>
-                        <option value="<?php echo $datos['id']?>"><?php echo 
+                        <option value="<?php echo $datos['id']?>"><?php echo
                         $datos['nombre_proyecto']?></option>
                         <?php
                     }
@@ -74,7 +72,7 @@
             <br><br>
             
 			<br><br>
-			<input type="submit" class="btn btn-success form-control" name="submit" value="Siguiente"/>
+			<input type="submit" class="btn btn-secondary form-control" name="submit" value="Siguiente"/>
 			
 
 		</div>

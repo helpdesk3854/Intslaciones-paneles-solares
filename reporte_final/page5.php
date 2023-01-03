@@ -3,16 +3,19 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../estilo.css">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	
 	<title>Personal de Campo</title>
 </head>	
 <body>
-        
-
-
-    <div class="page-header bg-primary text-white text-center">
-    <span class="h4">Fortius</span>
+<header>
+		<nav>
+            <img src= "../imagenes_vistas/black2.jpg" width="180" height="80">
+		</nav>
+	</header>
+    <div class="page-header bg-dark text-white text-center">
+		<span class="h4">Reporte Final</span>
 	</div>
     <br><br>
 
@@ -20,7 +23,7 @@
 
         <fieldset>
 
-            <legend class="text-center header text-success">Tuberia</legend>
+            <legend class="text-center header text-danger">Tuberia</legend>
             <h4>Evitar el uso de zoom</h4><br><br>
                 <label>Foto de la fijacion de tuberia</label>
                 <input type="file" name="fijacion_tuberia" id="fijacion_tuberia"  required>
@@ -47,7 +50,7 @@
                 <br><br>
                 <input type="reset" value="Borrar" >
                 <br><br>
-                <input type="submit" value="Siguiente" name="enviar" class="btn btn-success form-control">
+                <input type="submit" class="btn btn-secondary form-control" value="Siguiente" name="enviar" class="btn btn-success form-control">
 
             </fieldset>
         </form>

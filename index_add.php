@@ -13,6 +13,7 @@
 		<nav>
 			<a  title="inicio" href="index.php"><img src= "imagenes_vistas/black2.jpg" width="180" height="80"></a>
 			<a href="levantamiento/levantamiento_view.php">Levantamiento</a>
+            <a href="avance_diario/avance_view.php">Reporte diario</a>
 			<a href="reporte_final/proyectos.php">Reporte Final</a>
 		</nav>
 	</header>

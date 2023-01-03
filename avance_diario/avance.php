@@ -13,17 +13,20 @@
         
     <header>
 		<nav>
-			<img src= "../imagenes_vistas/black2.jpg" width="180" height="80">
-            <a href="avance.php">Avance diario</a>
+        <a  title="inicio" href="../obra.php"><img src= "../imagenes_vistas/black2.jpg" width="180" height="80"></a>
+			<a href="../levantamiento/ingeniero_lev.php">Crear un Levantamiento</a>
+			<a href="avance.php">Reporte diario</a>
+			<a href="../reporte_final/ingeniero.php">Crear un reporte final</a>
 		</nav>
 	</header>
+    <div class="page-header bg-dark text-white text-center">
+		<span class="h4">Reporte Diario</span>
+	</div>
     <br><br>
 
     <form  name="formulario" action="avance_query.php" method="POST" enctype="multipart/form-data" style="width:90%;margin:0 auto;" name="formulario" onsubmit="document.forms['formulario']['enviar'].disabled=true;" >
 
         <fieldset>
-
-            <legend class="text-center header text-success">Reporte diario</legend>
 
                 <div class="form-group">
                     <select  name="id_proyecto" id="seleccion">
@@ -67,14 +70,14 @@
                 <div id="davidlpls">
                     
                     <div>
-                        <span>Imagen</span><input type="file" name="imagen"  />
+                        <span>Imagen</span><input type="file" name="imagen"  required/>
                     </div>
                 </div>
 
                 
                 <br><br>
                 
-                <input type="submit" name="enviar" value="Siguiente">
+                <input type="submit" class="btn btn-secondary form-control" name="enviar" value="Siguiente">
                 
                 
             </fieldset>

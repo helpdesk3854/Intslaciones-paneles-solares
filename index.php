@@ -18,6 +18,10 @@
 			<a href="reporte_final/proyectos.php">Reporte Final</a>
 		</nav>
 	</header>
+	<div class="page-header bg-dark text-white text-center">
+		<span class="h4">Inicio</span>
+	</div>
+	<br><br>
 
 	<form action="index_add.php" method="POST" style="width:70%;margin:0 auto;">
 		

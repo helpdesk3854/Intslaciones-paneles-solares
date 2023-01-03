@@ -18,6 +18,9 @@
 			<a href="proyectos.php">Reporte Final</a>
 		</nav>
 	</header>
+    <div class="page-header bg-dark text-white text-center">
+		<span class="h4">Reporte Final</span>
+	</div>
 
     <form action="proyectos_query.php" method="POST" enctype="multipart/form-data" style="width:90%;margin:0 auto;">
 
