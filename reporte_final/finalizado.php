@@ -18,7 +18,7 @@
 		</nav>
 	</header>
 
-	<div class="page-header bg-dark text-white text-center">
+	<div class="page-header bg-danger text-white text-center">
 		<span class="h4">Fortius</span>
 	</div>
     <h1>FORMULARIO COMPLETADO </h1>

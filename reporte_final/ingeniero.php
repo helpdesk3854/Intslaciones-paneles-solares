@@ -15,10 +15,10 @@
 			<a  title="inicio" href="../obra.php"><img src= "../imagenes_vistas/black2.jpg" width="180" height="80"></a>
 			<a href="../levantamiento/ingeniero_lev.php">Crear un Levantamiento</a>
 			<a href="../avance_diario/avance.php">Reporte diario</a>
-			<a href="reporte_final/ingeniero.php">Crear un reporte final</a>
+			<a href="ingeniero.php">Crear un reporte final</a>
 		</nav>
 	</header>
-	<div class="page-header bg-dark text-white text-center">
+	<div class="page-header bg-danger text-white text-center">
 		<span class="h4">Reporte Final</span>
 	</div>
 

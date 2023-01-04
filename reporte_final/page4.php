@@ -14,7 +14,7 @@
             <img src= "../imagenes_vistas/black2.jpg" width="180" height="80">
 		</nav>
 	</header>
-    <div class="page-header bg-dark text-white text-center">
+    <div class="page-header bg-danger text-white text-center">
 		<span class="h4">Reporte Final</span>
 	</div>
     <br><br>

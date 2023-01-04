@@ -47,7 +47,6 @@
         
         
             while ($row = pg_fetch_row($query)) {
-                //echo "Ingeniero: $row[1]  Imagen: $row[2]  Hora: $row[3] Dia: $row[4]";
                 ?>
                 <table class="default" BORDER>
                     <tr>

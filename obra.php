@@ -18,7 +18,7 @@
 			<a href="reporte_final/ingeniero.php">Crear un reporte final</a>
 		</nav>
 	</header>
-	<div class="page-header bg-dark text-white text-center">
+	<div class="page-header bg-danger text-white text-center">
 		<span class="h4">Inicio</span>
 	</div>
 

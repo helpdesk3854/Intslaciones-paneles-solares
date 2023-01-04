@@ -23,6 +23,7 @@
 	</header>
 
 <?php
+    error_reporting(0);
     session_start();
     include_once("C:/xampp/htdocs/instalaciones/conexion.php");
 	$idproyect = $_REQUEST['id_proyect'];
@@ -533,6 +534,7 @@
                         </tr>
                 </table>
             </div>
+            <br><br>
 			
 		</div>
             </fieldset>

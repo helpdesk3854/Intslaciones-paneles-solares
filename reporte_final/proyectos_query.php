@@ -25,10 +25,10 @@
 		<span class="h4">Reporte Final</span>
 	</div>
 <?php
+    error_reporting(0);
     session_start();
     include_once("C:/xampp/htdocs/instalaciones/conexion.php");
 	$idproyect = $_REQUEST['id_proyect'];
-    //$_SESSION["idproyect"] = $idproyect;
 
     $sentence = 'select nombre_proyecto from proyecto where id = ' . $idproyect;
     $query = pg_query($conexion,$sentence );
@@ -40,9 +40,8 @@
 	</div>
     <br><br>
 
-    <form action="ingeniero_add.php" method="POST" enctype="multipart/form-data" style="width:90%;margin:0 auto";>
-        <fieldset>
-        <div>
+
+
         <div>
                 <legend class="text-center header text-success">Proyecto</legend>
                 <table class=".table-responsive-sm" BORDER>
@@ -516,10 +515,5 @@
                     </tr>
                 </table>
             </div>
-			
-		</div>
-
-            </fieldset>
-        </form>
 </body>
 </html>
