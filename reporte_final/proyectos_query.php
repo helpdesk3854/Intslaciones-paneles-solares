@@ -27,7 +27,7 @@
 <?php
     error_reporting(0);
     session_start();
-    include_once("C:/xampp/htdocs/instalaciones/conexion.php");
+    include_once("../conexion.php");
 	$idproyect = $_REQUEST['id_proyect'];
 
     $sentence = 'select nombre_proyecto from proyecto where id = ' . $idproyect;

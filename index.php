@@ -107,7 +107,7 @@
 				<input type="text" class="form-control" name="capacidad_panel" required>
 			</div>
 
-			<div class="form-group">|
+			<div class="form-group">
 				<label for="">Capacidad instalada Watts</label>
 				<input type="text" class="form-control" name="capacidad_instalada" required>
 			</div>

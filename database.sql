@@ -18,7 +18,7 @@ create table proyecto (
 )
 
 create table ingeniero (
-	id serial primary key,
+	id_proyecto serial primary key,
 	nombre_ingeniero varchar(100),
 	contraseña varchar(50),
 	CONSTRAINT fk_proyecto
@@ -196,6 +196,7 @@ select * from cinchado_cableado;
 select * from obra_civil_plantalta;
 select * from extras;
 
+TRUNCATE TABLE ingeniero_proyect, ingreso, inversor, centro_carga,obra_civil_plantabaja, tuberia, caja_gabinete, estructura, paneles, mc4, cinchado_cableado, obra_civil_plantalta, extras;
 
 
 /* tablas para levantamiento  */
@@ -362,34 +363,24 @@ create table tipo (
 )
 
 select * from proyecto;
-
 select * from ingeniero_levantamiento;
-
 select * from ingreso_lev;
-
 select * from area_paneles;
-
 select * from superficie_paneles;
-
 select * from puntos_cardinales;
-
 select * from pretil;
-
 select * from obstaculos;
-
 select * from trayecto_panel_caja;
-
 select * from trayecto_caja_inversor;
-
 select * from lugar_inversor;
-
 select * from trayecto_inversor_centro;
-
 select * from centroc_existente;
-
 select * from medidor;
-
 select * from tipo;
+
+truncate table ingeniero_levantamiento,ingreso_lev,area_paneles,superficie_paneles,
+puntos_cardinales,pretil,obstaculos,trayecto_panel_caja,trayecto_caja_inversor,lugar_inversor,
+trayecto_inversor_centro,centroc_existente,medidor,tipo;
 
 
 create table avance(

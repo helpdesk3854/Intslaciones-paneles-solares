@@ -26,7 +26,7 @@
 
 <?php
     session_start();
-    include_once("C:/xampp/htdocs/instalaciones/conexion.php");
+    include_once("../conexion.php");
 	
 	$id_proyecto = $_SESSION["idproyecto"];
     $query = ("UPDATE proyecto set activo = 'false' where id = $id_proyecto");

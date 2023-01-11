@@ -25,7 +25,7 @@
 <?php
     error_reporting(0);
     session_start();
-    include_once("C:/xampp/htdocs/instalaciones/conexion.php");
+    include_once("../conexion.php");
 	$idproyect = $_REQUEST['id_proyect'];
     $_SESSION["idproyect"] = $idproyect;
 
@@ -516,7 +516,7 @@
                 <legend class="text-center header text-success">Otros datos</legend>
                 <table class="default" BORDER>
                     <?php
-                        $sentence = 'select * from medidor where id_proyecto = ' . $idproyect;
+                        $sentence = 'select * from tipo where id_proyecto = ' . $idproyect;
                         $query = pg_query($conexion,$sentence);
                         $arr = pg_fetch_array($query, 0, PGSQL_NUM);
                     ?>

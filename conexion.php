@@ -1,6 +1,6 @@
 <?php
 $host='localhost';
-$bd='instalacion';
+$bd='pruebas';
 $user='postgres';
 $pass='12345678';
 

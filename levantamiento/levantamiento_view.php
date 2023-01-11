@@ -30,7 +30,7 @@
                 <select  name="id_proyect" id="seleccion">
                     <option value="0" required>Seleccione el nombre de la obra</option>
                 <?php
-                    include_once("C:/xampp/htdocs/instalaciones/conexion.php");
+                    include_once("../conexion.php");
                     $query = pg_query($conexion, 'select id, nombre_proyecto from proyecto ');
                     while ($datos= pg_fetch_array($query)) {
                         ?>
