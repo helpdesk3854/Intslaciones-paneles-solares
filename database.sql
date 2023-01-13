@@ -22,8 +22,8 @@ create table ingeniero (
 	nombre_ingeniero varchar(100),
 	contraseña varchar(50),
 	CONSTRAINT fk_proyecto
-      FOREIGN KEY(id_proyecto) 
-	  REFERENCES proyecto(id)
+    	FOREIGN KEY(id_proyecto) 
+		REFERENCES proyecto(id)
 )
 
 create table ingeniero_proyect(
@@ -70,15 +70,13 @@ create table centro_carga (
 
 create table obra_civil_plantabaja(
 	id_proyecto int,
-	planta_baja1 varchar(200) null,
-	planta_baja2 varchar(200) null,
-	planta_baja3 varchar(200) null,
+	imagen varchar(200) null,
 	observaciones text null,
 	CONSTRAINT fk_proyecto
       FOREIGN KEY(id_proyecto) 
 	  REFERENCES proyecto(id)
 )
-
+--************************************PARA MODIFICAR**********************************
 create table tuberia(
 	id_proyecto int,
 	fijacion_tuberia varchar(200) null,
@@ -105,6 +103,7 @@ create table caja_gabinete (
 	  REFERENCES proyecto(id)
 )
 
+--************************************PARA MODIFICAR**********************************
 create table estructura (
 	id_proyecto int,
 	fijacion_modulos varchar(200) null,
@@ -118,6 +117,7 @@ create table estructura (
 	  REFERENCES proyecto(id)
 )
 
+--************************************PARA MODIFICAR**********************************
 create table paneles(
 	id_proyecto int,
 	capacidad varchar(200) null,
@@ -134,9 +134,7 @@ create table paneles(
 
 create table mc4(
 	id_proyecto int,
-	mc41 varchar(200) null,
-	mc42 varchar(200) null,
-	mc43 varchar(200) null,
+	imagen varchar(200) null,
 	observaciones text null,
 	CONSTRAINT fk_proyecto
       FOREIGN KEY(id_proyecto) 
@@ -145,9 +143,7 @@ create table mc4(
 
 create table cinchado_cableado (
 	id_proyecto int,
-	cinchado1 varchar(200)null,
-	cinchado2 varchar(200) null,
-	cinchado3 varchar(200) null,
+	imagen varchar(200)null,
 	observaciones text null,
 	CONSTRAINT fk_proyecto
       FOREIGN KEY(id_proyecto) 
@@ -156,9 +152,7 @@ create table cinchado_cableado (
 
 create table obra_civil_plantalta(
 	id_proyecto int,
-	planta_alta1 varchar(200) null,
-	planta_alta2 varchar(200) null,
-	planta_alta3 varchar(200) null,
+	imagen varchar(200) null,
 	observaciones text null,
 	CONSTRAINT fk_proyecto
       FOREIGN KEY(id_proyecto) 
@@ -167,12 +161,8 @@ create table obra_civil_plantalta(
 
 create table extras(
 	id_proyecto int,
-	medidor_antiguo varchar(200) null,
-	extra1 varchar(200) null,
-	extra2 varchar(200) null,
-	extra3 varchar(200) null,
-	extra4 varchar(200) null,
-	extra5 varchar(200) null,
+	imagen varchar(200) null,
+	observaciones text null,
 	CONSTRAINT fk_proyecto
       FOREIGN KEY(id_proyecto) 
 	  REFERENCES proyecto(id)
@@ -196,7 +186,7 @@ select * from cinchado_cableado;
 select * from obra_civil_plantalta;
 select * from extras;
 
-TRUNCATE TABLE ingeniero_proyect, ingreso, inversor, centro_carga,obra_civil_plantabaja, tuberia, caja_gabinete, estructura, paneles, mc4, cinchado_cableado, obra_civil_plantalta, extras;
+--TRUNCATE TABLE ingeniero_proyect, ingreso, inversor, centro_carga,obra_civil_plantabaja, tuberia, caja_gabinete, estructura, paneles, mc4, cinchado_cableado, obra_civil_plantalta, extras;
 
 
 /* tablas para levantamiento  */
@@ -378,9 +368,7 @@ select * from centroc_existente;
 select * from medidor;
 select * from tipo;
 
-truncate table ingeniero_levantamiento,ingreso_lev,area_paneles,superficie_paneles,
-puntos_cardinales,pretil,obstaculos,trayecto_panel_caja,trayecto_caja_inversor,lugar_inversor,
-trayecto_inversor_centro,centroc_existente,medidor,tipo;
+--truncate table ingeniero_levantamiento,ingreso_lev,area_paneles,superficie_paneles,puntos_cardinales,pretil,obstaculos,trayecto_panel_caja,trayecto_caja_inversor,lugar_inversor,trayecto_inversor_centro,centroc_existente,medidor,tipo;
 
 
 create table avance(

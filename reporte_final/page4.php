@@ -24,22 +24,29 @@
         <fieldset>
 
             <legend class="text-center header text-danger">Obra civil(Planta Baja)</legend>
-            <h4>Evitar el uso de zoom</h4><br><br>
-                <h4>Ingrese fotografias de obra civil en caso de ser necesario, sino presione siguiente</h4>
-                <input type="file" name="obracivil1" id="obracivil1" >
-                <br><br>
-                <input type="file" name="obracivil2" id="obracivil2">
-                <br><br>
-                <input type="file" name="obracivil3" id="obracivil3">
-                <br><br>
+
+            <div id="davidlpls">
+                <div>
+                    <div>
+                        <span>Imagen</span><input type="file" name="imagenes[]" />
+                    </div>
+                </div>
+            </div><br>
+            
+            <div>
                 <textarea name="observaciones" id="observaciones" cols="35" rows="5" placeholder="Observaciones"></textarea>
                 <br><br>
-                <input type="reset" value="Borrar" >
-                <br><br>
-                <input type="submit" class="btn btn-secondary form-control" value="Siguiente" name="enviar" class="btn btn-success form-control">
+            </div>
+            <input type="button" value="Agregar otra imagen" id="agregar">
+            <br><br>
+            <input type="reset" value="Borrar" >
+            <br><br>
+            <input type="submit" class="btn btn-secondary form-control" value="Siguiente" name="enviar" class="btn btn-success form-control">
 
-            </fieldset>
-        </form>
+        </fieldset>
+    </form>
+    <script src="../js/dom.js"></script> <!-- para agregar mas imagenes -->
+    <script src="../js/codigo.js"></script> <!-- para agregar mas imagenes -->
     
 </body>
 </html>

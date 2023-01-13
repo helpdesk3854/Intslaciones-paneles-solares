@@ -24,25 +24,30 @@
         <fieldset>
 
             <legend class="text-center header text-danger">Cinchado de cableado</legend>
-            <h4>Evitar el uso de zoom</h4><br><br>
-                <h4>Ingrese fotografias distintas del cinchado de cables</h4>
-                <label></label>
-                <input type="file" name="cinchado1" id="cinchado1" required>
-                <br><br>
-                <label></label>
-                <input type="file" name="cinchado2" id="cinchado2" required>
-                <br><br>
-                <label></label>
-                <input type="file" name="cinchado3" id="cinchado3" required>
-                <br><br>
+
+            <h4>Ingrese fotografias distintas del cinchado de cables</h4>
+            <div id="davidlpls">
+                <div>
+                    <div>
+                        <span>Imagen</span><input type="file" name="imagenes[]" />
+                    </div>
+                </div>
+            </div><br>
+            
+            <div>
                 <textarea name="observaciones" id="observaciones" cols="35" rows="5" placeholder="Observaciones"></textarea>
                 <br><br>
-                <input type="reset" value="Borrar" >
-                <br><br>
-                <input type="submit" class="btn btn-secondary form-control" value="Siguiente" name="enviar" class="btn btn-success form-control">
+            </div>
+            <input type="button" value="Agregar otra imagen" id="agregar">
+            <br><br>
+            <input type="reset" value="Borrar" >
+            <br><br>
+            <input type="submit" class="btn btn-secondary form-control" value="Siguiente" name="enviar" class="btn btn-success form-control">
 
-            </fieldset>
-        </form>
+        </fieldset>
+    </form>
+    <script src="../js/dom.js"></script> <!-- para agregar mas imagenes -->
+    <script src="../js/codigo.js"></script> <!-- para agregar mas imagenes -->
     
 </body>
 </html>

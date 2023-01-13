@@ -86,8 +86,8 @@
             <input type="submit" class="btn btn-secondary form-control" name="enviar" value="Siguiente">
             <br><br>
     </form>
-    <script src="js/dom.js"></script> <!-- para agregar mas imagenes -->
-    <script src="js/codigo.js"></script> <!-- para agregar mas imagenes -->
+    <script src="../js/dom.js"></script> <!-- para agregar mas imagenes -->
+    <script src="../js/codigo.js"></script> <!-- para agregar mas imagenes -->
     
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src ="global.js"> </script>
