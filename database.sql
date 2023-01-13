@@ -1,4 +1,4 @@
-/* tablas para reporte final del proyecto  */
+/* tablas para reporte final del proyecto sssss */
 create table proyecto (
 	id serial primary key,
 	nombre_proyecto varchar(50),
