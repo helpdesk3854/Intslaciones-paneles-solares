@@ -25,7 +25,7 @@
         <fieldset>
 
             <legend class="text-center header text-danger">Fotos De Superficie Donde Se Instalaran Los Paneles</legend>
-                <h4>Evitar el uso de zoom</h4><br><br>
+
                 <label>Tipo de Superficie donde se instalara</label>
                 <select name="tipo">
                     <option value="Bobeda">Bobeda</option>
@@ -34,16 +34,19 @@
                 </select>
                 <br><br>
                 
-                <label>Fotografia No 1</label>
-                <input type="file" name="sup_panel1" >
-                <br><br>
-                <label>Fotografia No 2</label>
-                <input type="file" name="sup_panel2" >
-                <br><br>
-                <label>Fotografia No 3</label>
-                <input type="file" name="sup_panel3">
-                <br><br>
-                <textarea name="observaciones" id="observaciones" cols="35" rows="5" placeholder="Observaciones"></textarea>
+                <div id="davidlpls">
+                    <div>
+                        <div>
+                            <span>Imagen</span><input type="file" name="imagenes[]" />
+                        </div>
+                    </div>
+                </div><br>
+            
+                <div>
+                    <textarea name="observaciones" id="observaciones" cols="35" rows="5" placeholder="Observaciones"></textarea>
+                    <br><br>
+                </div>
+                <input type="button" value="Agregar otra imagen" id="agregar">
                 <br><br>
                 <input type="reset" value="Borrar" >
                 <br><br>
@@ -52,6 +55,8 @@
                 
             </fieldset>
         </form>
+        <script src="../js/dom.js"></script> <!-- para agregar mas imagenes -->
+        <script src="../js/codigo.js"></script> <!-- para agregar mas imagenes -->
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 
 </body> 

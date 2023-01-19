@@ -10,7 +10,7 @@
     
 </head>	
 <body>
-<header>
+    <header>
 		<nav>
             <img src= "../imagenes_vistas/black2.jpg" width="180" height="80">
 		</nav>
@@ -21,29 +21,32 @@
     <br><br>
 
     <form  name="formulario" action="query_lev9.php" method="POST" enctype="multipart/form-data" style="width:90%;margin:0 auto;" name="formulario" onsubmit="document.forms['formulario']['enviar'].disabled=true;" >
-
         <fieldset>
 
             <legend class="text-center header text-danger">Fotos del lugar donde se colocara el inversor</legend>
-                <h4>Evitar el uso de zoom</h4><br><br>
-                <label>Fotografia No 1</label>
-                <input type="file" name="inversor1"  >
-                <br><br>
-                <label>Fotografia No 2</label>
-                <input type="file" name="inversor2"  >
-                <br><br>
-                <label>Fotografia No 3</label>
-                <input type="file" name="inversor3" >
-                <br><br>
+            <div id="davidlpls">
+                <div>
+                    <div>
+                        <span>Imagen</span><input type="file" name="imagenes[]" required/>
+                    </div>
+                </div>
+            </div><br>
+            
+            <div>
                 <textarea name="observaciones" id="observaciones" cols="35" rows="5" placeholder="Observaciones"></textarea>
                 <br><br>
-                <input type="reset" value="Borrar" >
-                <br><br>
-                <input type="submit" class="btn btn-secondary form-control" name="enviar" value="Siguiente">
-                
-                
-            </fieldset>
-        </form>
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+            </div>
+            <input type="button" value="Agregar otra imagen" id="agregar">
+            <br><br>
+            <input type="reset" value="Borrar" >
+            <br><br>
+            <input type="submit" class="btn btn-secondary form-control" name="enviar" value="Siguiente">
+            
+            
+        </fieldset>
+    </form>
+    <script src="../js/dom.js"></script> <!-- para agregar mas imagenes -->
+    <script src="../js/codigo.js"></script> <!-- para agregar mas imagenes -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 </body> 
 </html>

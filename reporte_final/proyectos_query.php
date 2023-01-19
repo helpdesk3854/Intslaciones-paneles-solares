@@ -216,38 +216,33 @@
                 <legend class="text-center header text-success">Obra civil(Planta Baja)</legend>
                 <table class="default" BORDER>
                     <?php
-                        
+                        $observacion ="";
                         $sentence = 'select * from obra_civil_plantabaja where id_proyecto = ' . $idproyect;
                         $query = pg_query($conexion,$sentence);
                         if($query){
-                            $arr = pg_fetch_array($query, 0, PGSQL_NUM);
+                            while ($row = pg_fetch_row($query)) {
+                                ?>
+                                <tr>
+                                    <td>Imagen</td>
+                                    <td><img class="img-fluid" alt=" " src= "<?php   echo $row[1];   ?>" ></td>
+                                </tr>
+                                <?php
+                                $observacion = $row[2];
+                            }
                             ?>
                             <tr>
-                                <td>Planta baja 1</td>
-                                <td><img class="img-fluid" alt=" " src= "<?php   echo $arr[1];   ?>" ></td>
-                            </tr>
-                            <tr>
-                                <td>Planta baja 2</td>
-                                <td><img class="img-fluid" alt=" " src= "<?php   echo $arr[2];   ?>" ></td>
-                            </tr>
-                            <tr>
-                                <td>Planta baja 3</td>
-                                <td><img class="img-fluid" alt=" " src= "<?php   echo $arr[3];   ?>" ></td>
-                            </tr>
-                            <tr>
                                 <td>Observaciones</td>
-                                <td><p alt=" "><?php   echo $arr[4];   ?> </p></td>
+                                <td><p alt=" "><?php   echo $observacion;   ?> </p></td>
                             </tr>
-                        <?php
+                            <?php
                         }
                         else{
                             ?>
                             <h3>No se requirio Obra civil(planta baja)</h3>
                             <?php
                         }
-                        ?>
-                        
-                    
+                    ?>
+
                 </table>
             </div>
 
@@ -404,80 +399,81 @@
                 <legend class="text-center header text-success">MC4</legend>
                 <table class="default" BORDER>
                     <?php
+                        $observacion ="";
                         $sentence = 'select * from mc4 where id_proyecto = ' . $idproyect;
                         $query = pg_query($conexion,$sentence );
-                        $arr = pg_fetch_array($query, 0, PGSQL_NUM);
+                        if($query){
+                            while ($row = pg_fetch_row($query)) {
+                                ?>
+                                <tr>
+                                    <td>Imagen</td>
+                                    <td><img class="img-fluid" alt=" " src= "<?php   echo $row[1];   ?>" ></td>
+                                </tr>
+                                <?php
+                                $observacion = $row[2];
+                            }
+                            ?>
+                            <tr>
+                                <td>Observaciones</td>
+                                <td><p alt=" "><?php   echo $observacion;   ?> </p></td>
+                            </tr>
+                            <?php
+                        }
+                        else{
+                            ?>
+                            <h3>No se requirio Obra civil(planta baja)</h3>
+                            <?php
+                        }
                     ?>
-                    <tr>
-                        <td>MC4 1</td>
-                        <td><img class="img-fluid" alt=" " src= "<?php   echo $arr[1];   ?>" ></td>
-                    </tr>
-                    <tr>
-                        <td>MC4 2</td>
-                        <td><img class="img-fluid" alt=" " src= "<?php   echo $arr[2];   ?>" ></td>
-                    </tr>
-                    <tr>
-                        <td>MC4 3</td>
-                        <td><img class="img-fluid" alt=" " src= "<?php   echo $arr[3];   ?>" ></td>
-                    </tr>
-                    <tr>
-                        <td>Observaciones</td>
-                        <td><p alt=" "><?php   echo $arr[4];   ?> </p></td>
-                    </tr>
                 </table>
             </div>
-
+                    
             <div>
                 <legend class="text-center header text-success">Cinchado del cableado</legend>
                 <table class="default" BORDER>
                     <?php
+                        $observacion ="";
                         $sentence = 'select * from cinchado_cableado where id_proyecto = ' . $idproyect;
                         $query = pg_query($conexion,$sentence);
-                        $arr = pg_fetch_array($query, 0, PGSQL_NUM);
-                    ?>
-                    <tr>
-                        <td>Cinchado 1</td>
-                        <td><img class="img-fluid" alt=" " src= "<?php   echo $arr[1];   ?>" ></td>
-                    </tr>
-                    <tr>
-                        <td>Cinchado 2</td>
-                        <td><img class="img-fluid" alt=" " src= "<?php   echo $arr[2];   ?>" ></td>
-                    </tr>
-                    <tr>
-                        <td>Cinchado 3</td>
-                        <td><img class="img-fluid" alt=" " src= "<?php   echo $arr[3];   ?>" ></td>
-                    </tr>
-                    <tr>
-                        <td>Observaciones</td>
-                        <td><p alt=" "><?php   echo $arr[4];   ?> </p></td>
-                    </tr>
+                        while ($row = pg_fetch_row($query)) {
+                            ?>
+                            <tr>
+                                <td>Imagen</td>
+                                <td><img class="img-fluid" alt=" " src= "<?php   echo $row[1];   ?>" ></td>
+                            </tr>
+                            <?php
+                            $observacion = $row[2];
+                        }
+                        ?>
+                        <tr>
+                            <td>Observaciones</td>
+                            <td><p alt=" "><?php   echo $observacion;   ?> </p></td>
+                        </tr>
                 </table>
             </div>
+            
 
             <div>
                 <legend class="text-center header text-success">Obra Civil(Planta Alta)</legend>
                 <table class="default" BORDER>
                     <?php
+                        $observacion ="";
                         $sentence = 'select * from obra_civil_plantalta where id_proyecto = ' . $idproyect;
                         $query = pg_query($conexion,$sentence);
-                        $arr = pg_fetch_array($query, 0, PGSQL_NUM);
-                    ?>
+                        while ($row = pg_fetch_row($query)) {
+                            ?>
+                            <tr>
+                                <td>Imagen</td>
+                                <td><img class="img-fluid" alt=" " src= "<?php   echo $row[1];   ?>" ></td>
+                            </tr>
+                            <?php
+                            $observacion = $row[2];
+                        }
+                        ?>
                         <tr>
-                                    <td>Planta baja 1</td>
-                                    <td><img class="img-fluid" alt=" " src= "<?php   echo $arr[1];   ?>" ></td>
-                                </tr>
-                                <tr>
-                                    <td>Planta baja 2</td>
-                                    <td><img class="img-fluid" alt=" " src= "<?php   echo $arr[2];   ?>" ></td>
-                                </tr>
-                                <tr>
-                                    <td>Planta baja 3</td>
-                                    <td><img class="img-fluid" alt=" " src= "<?php   echo $arr[3];   ?>" ></td>
-                                </tr>
-                                <tr>
-                                    <td>Observaciones</td>
-                                    <td><p alt=" "><?php   echo $arr[4];   ?> </p></td>
-                                </tr>
+                            <td>Observaciones</td>
+                            <td><p alt=" "><?php   echo $observacion;   ?> </p></td>
+                        </tr>
                 </table>
             </div>
 
@@ -485,35 +481,25 @@
                 <legend class="text-center header text-success">Extras</legend>
                 <table class="default" BORDER>
                     <?php
+                        $observacion ="";
                         $sentence = 'select * from extras where id_proyecto = ' . $idproyect;
                         $query = pg_query($conexion,$sentence );
-                        $arr = pg_fetch_array($query, 0, PGSQL_NUM);
-                    ?>
-                    <tr>
-                        <td>Medidor Antiguo</td>
-                        <td><img class="img-fluid" alt=" " src= "<?php   echo $arr[1];   ?>" ></td>
-                    </tr>
-                    <tr>
-                        <td>Extra 1</td>
-                        <td><img class="img-fluid" alt=" " src= "<?php   echo $arr[2];   ?>" ></td>
-                    </tr>
-                    <tr>
-                        <td>Extra 2</td>
-                        <td><img class="img-fluid" alt=" " src= "<?php   echo $arr[3];   ?>" ></td>
-                    </tr>
-                    <tr>
-                        <td>Extra 3</td>
-                        <td><img class="img-fluid" alt=" " src= "<?php   echo $arr[4];   ?>" ></td>
-                    </tr>
-                    <tr>
-                        <td>Extra 4</td>
-                        <td><img class="img-fluid" alt=" " src= "<?php   echo $arr[5];   ?>" ></td>
-                    </tr>
-                    <tr>
-                        <td>Extra 5</td>
-                        <td><img class="img-fluid" alt=" " src= "<?php   echo $arr[6];   ?>" ></td>
-                    </tr>
+                        while ($row = pg_fetch_row($query)) {
+                            ?>
+                            <tr>
+                                <td>Imagen</td>
+                                <td><img class="img-fluid" alt=" " src= "<?php   echo $row[1];   ?>" ></td>
+                            </tr>
+                            <?php
+                            $observacion = $row[2];
+                        }
+                        ?>
+                        <tr>
+                            <td>Observaciones</td>
+                            <td><p alt=" "><?php   echo $observacion;   ?> </p></td>
+                        </tr>
                 </table>
             </div>
+            
 </body>
 </html>

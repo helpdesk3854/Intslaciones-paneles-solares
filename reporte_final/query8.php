@@ -7,17 +7,11 @@
 <?php
     session_start();
     include_once("../conexion.php");
-    require_once("../subir.php");
+    require_once("../subir2.php");
+    $datos = array($_SESSION["idproyecto"], $_REQUEST["observaciones"]); 
     if(!empty($_POST)){
-        $cinchado1 = subir_fichero('images','cinchado1');
-        $cinchado2 = subir_fichero('images','cinchado2');
-        $cinchado3 = subir_fichero('images','cinchado3');
+        subir_fichero('images', "cinchado", $datos);
     }
-
-	$query = ("INSERT INTO cinchado_cableado(id_proyecto,cinchado1,cinchado2,cinchado3,observaciones)
-	VALUES('$_SESSION[idproyecto]','$cinchado1','$cinchado2','$cinchado3','$_REQUEST[observaciones]')"); 
-    $consulta=pg_query($conexion,$query);
-
     header("Location: page9.php");
 
 ?>

@@ -24,27 +24,29 @@
         <fieldset>
 
             <legend class="text-center header text-danger">MC4</legend>
-                <h4>Evitar el uso de zoom</h4><br><br>
                 
-                <label>Fotografia numero 1 de los mc4</label>
-                <input type="file" name="mc41" id="mc41" required>
-                <br><br>
-                <label>Fotografia numero 2 de los mc4</label>
-                <input type="file" name="mc42" id="mc42" required>
-                <br><br>
-                <label>Fotografia numero 3 de los mc4</label>
-                <input type="file" name="mc43" id="mc43" required>
-                <br><br>
+            <div id="davidlpls">
+                <div>
+                    <div>
+                        <span>Imagen</span><input type="file" name="imagenes[]" />
+                    </div>
+                </div>
+            </div><br>
+            
+            <div>
                 <textarea name="observaciones" id="observaciones" cols="35" rows="5" placeholder="Observaciones"></textarea>
                 <br><br>
-                <input type="reset" value="Borrar" >
-                <br><br>
-                
-                
-                <input type="submit" class="btn btn-secondary form-control" value="Siguiente" name="enviar" class="btn btn-success form-control">
+            </div>
+            <input type="button" value="Agregar otra imagen" id="agregar">
+            <br><br>
+            <input type="reset" value="Borrar" >
+            <br><br>
+            <input type="submit" class="btn btn-secondary form-control" value="Siguiente" name="enviar" class="btn btn-success form-control">
 
             </fieldset>
         </form>
+        <script src="../js/dom.js"></script> <!-- para agregar mas imagenes -->
+        <script src="../js/codigo.js"></script> <!-- para agregar mas imagenes -->
     
 </body>
 </html>
