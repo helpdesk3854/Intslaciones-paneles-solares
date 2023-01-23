@@ -24,6 +24,7 @@
     <div class="page-header bg-dark text-white text-center">
 		<span class="h4">Reporte Final</span>
 	</div>
+    
 <?php
     error_reporting(0);
     session_start();
@@ -40,7 +41,7 @@
 	</div>
     <br><br>
 
-
+    <span class="ir-arriba icon-arrow-up2">a</span>
 
         <div>
                 <legend class="text-center header text-success">Proyecto</legend>
@@ -355,42 +356,33 @@
                 <legend class="text-center header text-success">Paneles</legend>
                 <table class="default" BORDER>
                     <?php
+                        $observacion ="";
                         $sentence = 'select * from paneles where id_proyecto = ' . $idproyect;
-                        $query = pg_query($conexion,$sentence );
-                        $arr = pg_fetch_array($query, 0, PGSQL_NUM);
-                    ?>
-                    <tr>
-                        <td>Cantidad</td>
-                        <td><p alt=" "><?php   echo $arr[2];   ?> </td>
-                    </tr>
-                    <tr>
-                        <td>Capacidad</td>
-                        <td><img class="img-fluid" alt=" " src= "<?php   echo $arr[1];   ?>" ></td>
-                    </tr>
-                    <tr>
-                        <td>Paneles 1</td>
-                        <td><img class="img-fluid" alt=" " src= "<?php   echo $arr[3];   ?>" ></td>
-                    </tr>
-                    <tr>
-                        <td>Paneles 2</td>
-                        <td><img class="img-fluid" alt=" " src= "<?php   echo $arr[4];   ?>" ></td>
-                    </tr>
-                    <tr>
-                        <td>Paneles 3</td>
-                        <td><img class="img-fluid" alt=" " src= "<?php   echo $arr[5];   ?>" ></td>
-                    </tr>
-                    <tr>
-                        <td>Paneles 4</td>
-                        <td><img class="img-fluid" alt=" " src= "<?php   echo $arr[6];   ?>" ></td>
-                    </tr>
-                    <tr>
-                        <td>Panoramica</td>
-                        <td><img class="img-fluid" alt=" " src= "<?php   echo $arr[7];   ?>" ></td>
-                    </tr>
-                    <tr>
-                        <td>Observaciones</td>
-                        <td><p alt=" "><?php   echo $arr[8];   ?> </p></td>
-                    </tr>
+                        $query = pg_query($conexion,$sentence);
+                        $band=0;
+                        while ($row = pg_fetch_row($query)) {
+                            if($band==0){
+                                ?>
+                                <tr>
+                                    <td>Cantidad de paneles</td>
+                                    <td><p alt=" "><?php   echo $row[1];   ?> </p></td>
+                                </tr>
+                                <?php
+                                $band=1;
+                            }
+                            ?>
+                            <tr>
+                                <td>Imagen</td>
+                                <td><img class="img-fluid" alt=" " src= "<?php   echo $row[2];   ?>" ></td>
+                            </tr>
+                            <?php
+                            $observacion = $row[3];
+                        }
+                        ?>
+                        <tr>
+                            <td>Observaciones</td>
+                            <td><p alt=" "><?php   echo $observacion;   ?> </p></td>
+                        </tr>
                 </table>
             </div>
 

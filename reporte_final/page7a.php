@@ -24,38 +24,41 @@
         <fieldset>
 
             <legend class="text-center header text-danger">Paneles</legend>
-                <h4>Evitar el uso de zoom</h4><br><br>
+                
                 <label>Cantidad de Paneles</label>
                 <input type="text" class="form-control" name="cantidad" required>
                 <br><br>
+
                 <label>Foto VISIBLE de la capacidad de los paneles   </label>
-                <input type="file" name="capacidad" id="capacidad" required>
-                <br><br>
-                <label>Fotografia 1 de los paneles</label>
-                <input type="file" name="paneles1" id="paneles1" required>
-                <br><br>
-                <label>Fotografia 2 de los paneles</label>
-                <input type="file" name="paneles2" id="paneles2" required>
-                <br><br>
-                <label>Fotografia 3 de los paneles</label>
-                <input type="file" name="paneles3" id="paneles3" required>
-                <br><br>
-                <label>Fotografia 4 de los paneles</label>
-                <input type="file" name="paneles4" id="paneles4" required>
+                <input type="file" name="imagenes[]" required>
                 <br><br>
                 <label>Foto panoramica de los paneles</label>
-                <input type="file" name="panoramica" id="panoramica" required>
+                <input type="file" name="imagenes[]" required>
                 <br><br>
-                <textarea name="observaciones" id="observaciones" cols="35" rows="5" placeholder="Observaciones"></textarea>
+
+
+                <div id="davidlpls">
+                    <div>
+                        <div>
+                            <span>Imagen</span><input type="file" name="imagenes[]" />
+                        </div>
+                    </div>
+                </div><br>
+
+                <div>
+                    <textarea name="observaciones" id="observaciones" cols="35" rows="5" placeholder="Observaciones"></textarea>
+                    <br><br>
+                </div>
+                <input type="button" value="Agregar otra imagen" id="agregar">
                 <br><br>
                 <input type="reset" value="Borrar" >
                 <br><br>
-                
-                
                 <input type="submit" class="btn btn-secondary form-control" value="Siguiente" name="enviar" class="btn btn-success form-control">
 
             </fieldset>
         </form>
-    
+    <script src="../js/dom.js"></script> <!-- para agregar mas imagenes -->
+    <script src="../js/codigo.js"></script> <!-- para agregar mas imagenes -->
+
 </body>
 </html>

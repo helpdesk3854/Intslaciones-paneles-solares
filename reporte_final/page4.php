@@ -20,9 +20,7 @@
     <br><br>
 
     <form action="query4.php" method="POST" enctype="multipart/form-data" style="width:90%;margin:0 auto;" name="formulario" onsubmit="document.forms['formulario']['enviar'].disabled=true;">
-
         <fieldset>
-
             <legend class="text-center header text-danger">Obra civil(Planta Baja)</legend>
 
             <div id="davidlpls">

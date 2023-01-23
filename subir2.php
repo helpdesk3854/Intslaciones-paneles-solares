@@ -106,6 +106,12 @@ function seleccionInsert($opcion, array $datos, $link){
             $consulta=pg_query($conexion,$query);
             break;
 
+        case "paneles":
+                $query = ("INSERT INTO paneles(id_proyecto,cantidad,imagen,observaciones)
+                values('$datos[0]','$datos[1]','$link','$datos[2]')");
+                $consulta=pg_query($conexion,$query);
+            break;
+
         case "pretil":
             $query = ("INSERT INTO pretil(id_proyecto,imagen,maxima,minima,observaciones)
             values('$datos[0]','$link','$datos[1]','$datos[2]','$datos[3]')");  

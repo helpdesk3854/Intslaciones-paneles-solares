@@ -11,10 +11,6 @@
     $proyecto=$_REQUEST["id_proyecto"];
     $ingeniero=$_REQUEST["id_ingeniero"];
     $password=$_REQUEST["password"];
-    
-    // echo nl2br("pagina id proyecto ->" . $proyecto . "\n");  //
-    // echo nl2br("pagina id ingeniero ->" .$ingeniero . "\n");  
-    // echo nl2br("pagina contraseña ->" .$password . "\n\n");  //PASSWORD DE LA PAGINA
 
     $_SESSION["idproyecto"] = $proyecto; 
 
@@ -22,9 +18,6 @@
     $query = pg_query($conexion,$sentence);
     $arr = pg_fetch_array($query, 0, PGSQL_NUM);
 
-    // echo nl2br("ID->" . $arr[0] . "\n") ;  //ID PROYECTO
-    // echo nl2br("nOMBRE->" . $arr[1] . "\n");  //NOMBRE
-    // echo nl2br("Contraseña->" . $arr[2] . "\n");  //CONTRASEÑA
 
 
     
