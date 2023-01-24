@@ -18,13 +18,18 @@ create table proyecto (
 )
 
 create table ingeniero (
-	id_proyecto serial primary key,
+	id serial primary key,
 	nombre_ingeniero varchar(100),
-	contraseña varchar(50),
-	CONSTRAINT fk_proyecto
-      FOREIGN KEY(id_proyecto) 
-	  REFERENCES proyecto(id)
+	contraseña varchar(50)
 )
+
+insert into ingeniero(nombre_ingeniero,contraseña)values
+('admin','admin'),
+('Jose Guadalupe Iñiguez','4ppfortius'),
+('Carlos Humberto Rodriguez','4ppsolar'),
+('Javier Mora','4ppcdmx'),
+('Luis Francisco Gonzalez Avila','4ppsilao'),
+('Jose Luis Vazquez','4ppelectromecanica');
 
 create table ingeniero_proyect(
 	id_proyecto int,

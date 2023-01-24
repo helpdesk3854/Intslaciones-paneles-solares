@@ -1,55 +1,71 @@
-</body>
-</html>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="../estilo.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
+            crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" 
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+        <link rel="stylesheet" href="../boton.css">
+        <title>Proyectos</title>
+    </head>
+
+    <body>
+        <header>
+            <nav>
+                <a  title="inicio" href="../index.php"><img src= "../imagenes_vistas/black2.jpg" width="180" height="80"></a>
+                <a href="levantamiento_view.php">Levantamiento</a>
+                <a href="../avance_diario/avance_view.php">Reporte diario</a>
+                <a href="../reporte_final/proyectos.php">Reporte Final</a>
+            </nav>
+        </header>
+
+        <div class="page-header bg-dark text-white text-center">
+            <?php
+                error_reporting(0);
+                session_start();
+                include_once("../conexion.php");
+                $idproyect = $_REQUEST['id_proyect'];
+                $_SESSION["idproyect"] = $idproyect;
+
+                $sentence = 'select nombre_proyecto from proyecto where id = ' . $idproyect;
+                $query = pg_query($conexion,$sentence );
+                $arr = pg_fetch_array($query, 0, PGSQL_NUM);
+            ?>
+            <span class="h4">Levantamiento: <?php   echo $arr[0];   ?></span>
+        </div>
+        <br><br>
 
 
-<html>
-<head>
-    <meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../estilo.css">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    
-	<title>Proyectos</title>
-</head>
+        <div class="container">
 
-<body>
-    <header>
-		<nav>
-			<a  title="inicio" href="../index.php"><img src= "../imagenes_vistas/black2.jpg" width="180" height="80"></a>
-			<a href="levantamiento_view.php">Levantamiento</a>
-            <a href="../avance_diario/avance_view.php">Reporte diario</a>
-			<a href="../reporte_final/proyectos.php">Reporte Final</a>
-		</nav>
-	</header>
+            <div class="idc-box">
+                <p class="idc-titulo">Indice</p>
+                <ul class="idc-lista">
+                    <li><a href="#levproyecto">Proyecto</a></li>
+                    <li><a href="#levfachada">Fachada</a></li>
+                    <li><a href="#levAreaPaneles">Area de Instalacion de Paneles</a></li>
+                    <li><a href="#levTipSup">Tipo de Superficiea</a></li>
+                    <li><a href="#levPuntosCardinales">Fotografias de los puntos Cardinales</a></li>
+                    <li><a href="#levPretil">Pretil</a></li>
+                    <li><a href="#levObstaculos">Obstaculos</a></li>
+                    <li><a href="#levPanleCc">Trayectoria o Canalizacion de paneles hacia caja combinadora o caja de fusibles</a></li>
+                    <li><a href="#levCcInversor">Trayectoria de Caja de fusibles hacia inversor</a></li>
+                    <li><a href="#levLugarInversor">Lugar donde se colocara el Inversor</a></li>
+                    <li><a href="#levInversorCc">Trayectoria de Inversor a centro de carga</a></li>
+                    <li><a href="#levCcExistente">Centro de Carga Existente</a></li>
+                    <li><a href="#levMedidor">Medidor</a></li>
+                    <li><a href="#levOtrsoDatos">Otros datos</a></li>
+                    
+                </ul>
+            </div>
 
-<?php
-    error_reporting(0);
-    session_start();
-    include_once("../conexion.php");
-	$idproyect = $_REQUEST['id_proyect'];
-    $_SESSION["idproyect"] = $idproyect;
-
-    $sentence = 'select nombre_proyecto from proyecto where id = ' . $idproyect;
-    $query = pg_query($conexion,$sentence );
-    $arr = pg_fetch_array($query, 0, PGSQL_NUM);
-?>
-
-    <div class="page-header bg-dark text-white text-center">
-		<span class="h4">Obra: <?php   echo $arr[0];   ?></span>
-	</div>
-
-    
-    
-
-
-
-    <br><br>
-
-    <form action="ingeniero_add.php" method="POST" enctype="multipart/form-data" style="width:90%;margin:0 auto";>
-        <fieldset>
-        <div>
-        <div>
-                <legend class="text-center header text-success">Proyecto Levantamiento</legend>
+            <div>
+                <legend id="levproyecto" class="text-center header text-success">Proyecto Levantamiento</legend>
                 <table class=".table-responsive-sm" BORDER>
                         <?php
                             $sentence = 'select * from proyecto where id = ' . $idproyect;
@@ -126,11 +142,10 @@
                     </tr>
 
                 </table>
-                <br><br>   
-            </div>
+            </div><br><br>  
 
             <div>
-                <legend class="text-center header text-success">Fachada</legend>
+                <legend id="levfachada" class="text-center header text-success">Fachada</legend>
                 <table class="default" BORDER>
                     <?php
                         $sentence = 'select * from ingreso_lev where id_proyecto = ' . $idproyect;
@@ -154,11 +169,10 @@
                         <td><p alt=" "><?php   echo $arr[4];   ?> </p></td>
                     </tr>
                 </table>
-            </div>
-            
+            </div><br>
             
             <div>
-                <legend class="text-center header text-success">Area de Instalacion de Paneles</legend>
+                <legend id="levAreaPaneles" class="text-center header text-success">Area de Instalacion de Paneles</legend>
                 <table class="default" BORDER>
                     <?php
                         $observacion ="";
@@ -180,10 +194,10 @@
                         </tr>
                     
                 </table>
-            </div>
+            </div><br>
 
             <div>
-                <legend class="text-center header text-success">Tipo de Superficiea</legend>
+                <legend id="levTipSup" class="text-center header text-success">Tipo de Superficiea</legend>
                 <table class="default" BORDER>
                     <?php
                         $observacion ="";
@@ -205,10 +219,10 @@
                         </tr>
                     
                 </table>
-            </div>
+            </div><br>
 
             <div>
-                <legend class="text-center header text-success">Fotografias de los puntos Cardinales</legend>
+                <legend id="levPuntosCardinales" class="text-center header text-success">Fotografias de los puntos Cardinales</legend>
                 <table class="default" BORDER>
                     <?php
                         
@@ -246,12 +260,11 @@
                         }
                         ?>
                         
-                    
                 </table>
-            </div>
+            </div><br>
 
             <div>
-                <legend class="text-center header text-success">Pretil</legend>
+                <legend id="levPretil" class="text-center header text-success">Pretil</legend>
                 <table class="default" BORDER>
 
                     <?php
@@ -285,10 +298,10 @@
                             <td><p alt=" "><?php   echo $observacion;   ?> </p></td>
                         </tr>
                 </table>
-            </div>
+            </div><br>
 
             <div>
-                <legend class="text-center header text-success">Obstaculos</legend>
+                <legend id="levObstaculos" class="text-center header text-success">Obstaculos</legend>
                 <table class="default" BORDER>
                 <?php
                         $observacion ="";
@@ -309,10 +322,10 @@
                             <td><p alt=" "><?php   echo $observacion;   ?> </p></td>
                         </tr>
                 </table>
-            </div>
+            </div><br>
 
             <div>
-                <legend class="text-center header text-success">Trayectoria o Canalizacion de paneles hacia caja combinadora o caja de fusibles</legend>
+                <legend id="levPanleCc" class="text-center header text-success">Trayectoria o Canalizacion de paneles hacia caja combinadora o caja de fusibles</legend>
                 <table class="default" BORDER>
                     <?php
                         $observacion ="";
@@ -333,10 +346,10 @@
                             <td><p alt=" "><?php   echo $observacion;   ?> </p></td>
                         </tr>
                 </table>
-            </div>
+            </div><br>
 
             <div>
-                <legend class="text-center header text-success">Trayectoria de Caja de fusibles hacia inversor</legend>
+                <legend id="levCcInversor" class="text-center header text-success">Trayectoria de Caja de fusibles hacia inversor</legend>
                 <table class="default" BORDER>
                 <?php
                         $observacion ="";
@@ -357,11 +370,10 @@
                             <td><p alt=" "><?php   echo $observacion;   ?> </p></td>
                         </tr>
                 </table>
-            </div>
-
+            </div><br>
 
             <div>
-                <legend class="text-center header text-success">Lugar donde se colocara el Inversor</legend>
+                <legend id="levLugarInversor" class="text-center header text-success">Lugar donde se colocara el Inversor</legend>
                 <table class="default" BORDER>
                     <?php
                         $observacion ="";
@@ -382,10 +394,10 @@
                             <td><p alt=" "><?php   echo $observacion;   ?> </p></td>
                         </tr>
                 </table>
-            </div>
+            </div><br>
 
             <div>
-                <legend class="text-center header text-success">Trayectoria de Inversor a centro de carga</legend>
+                <legend id="levInversorCc" class="text-center header text-success">Trayectoria de Inversor a centro de carga</legend>
                 <table class="default" BORDER>
                 <?php
                         $observacion ="";
@@ -406,10 +418,10 @@
                             <td><p alt=" "><?php   echo $observacion;   ?> </p></td>
                         </tr>
                 </table>
-            </div>
+            </div><br>
 
             <div>
-                <legend class="text-center header text-success">Centro de Carga Existente</legend>
+                <legend id="levCcExistente" class="text-center header text-success">Centro de Carga Existente</legend>
                 <table class="default" BORDER>
                 <?php
                         $observacion ="";
@@ -430,10 +442,10 @@
                             <td><p alt=" "><?php   echo $observacion;   ?> </p></td>
                         </tr>
                 </table>
-            </div>
+            </div><br>
 
             <div>
-                <legend class="text-center header text-success">Medidor</legend>
+                <legend id="levMedidor" class="text-center header text-success">Medidor</legend>
                 <table class="default" BORDER>
                     <?php
                         $sentence = 'select * from medidor where id_proyecto = ' . $idproyect;
@@ -453,10 +465,10 @@
                             <td><p alt=" "><?php   echo $arr[3];   ?> </p></td>
                         </tr>
                 </table>
-            </div>
+            </div><br>
 
             <div>
-                <legend class="text-center header text-success">Otros datos</legend>
+                <legend id="levOtrsoDatos" class="text-center header text-success">Otros datos</legend>
                 <table class="default" BORDER>
                     <?php
                         $sentence = 'select * from tipo where id_proyecto = ' . $idproyect;
@@ -478,12 +490,15 @@
                 </table>
             </div>
             <br><br>
-			
-		</div>
-            </fieldset>
-        </form>
+            
+        </div>
 
+        <div class="go-top-container">
+            <div class="go-top-button">
+                <i class="fas fa-chevron-up"></i>
+            </div>
+        </div>
 
-
+        <script src="../js/boton.js"></script>
     </body>
 </html>

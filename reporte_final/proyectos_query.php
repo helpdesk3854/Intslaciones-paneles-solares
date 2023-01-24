@@ -1,56 +1,74 @@
-</body>
-</html>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="../estilo.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
+            crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" 
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+        <link rel="stylesheet" href="../boton.css">
+        <title>Proyectos</title>
+    </head>
+
+    <body>
+        <header>
+            <nav>
+                <a  title="inicio" href="../index.php"><img src= "../imagenes_vistas/black2.jpg" width="180" height="80"></a>
+                <a href="../levantamiento/levantamiento_view.php">Levantamiento</a>
+                <a href="../avance_diario/avance_view.php">Reporte diario</a>
+                <a href="../reporte_final/proyectos.php">Reporte Final</a>
+            </nav>
+        </header>
+
+        <div class="page-header bg-dark text-white text-center">
+            <?php
+                error_reporting(0);
+                session_start();
+                include_once("../conexion.php");
+                $idproyect = $_REQUEST['id_proyect'];
+
+                $sentence = 'select nombre_proyecto from proyecto where id = ' . $idproyect;
+                $query = pg_query($conexion,$sentence );
+                $arr = pg_fetch_array($query, 0, PGSQL_NUM);
+            ?>
+            <span class="h4">Reporte Final: <?php   echo $arr[0];   ?></span>
+        </div>
+        
+        
+        <div class="container">
+
+            <div class="idc-box">
+                <p class="idc-titulo">Indice</p>
+                <ul class="idc-lista">
+                    <li><a href="#proyecto">Proyecto</a></li>
+                    <li><a href="#fachada">Fachada</a></li>
+                    <li><a href="#inversor">Inversor</a></li>
+                    <li><a href="#centrocarga">Centro de Carga</a></li>
+                    <li><a href="#plantaBaja">Obra Civil(Planta Baja)</a></li>
+                    <li><a href="#tuberia">Tuberia</a></li>
+                    <li><a href="#cajagabinete">Caja combinadora / Gabinete himel</a></li>
+                    <li><a href="#estructPaneles">Estructura de Paneles</a></li>
+                    <li><a href="#paneles">Paneles</a></li>
+                    <li><a href="#mc4">Mc4</a></li>
+                    <li><a href="#cinchCableado">Cinchado del cableado</a></li>
+                    <li><a href="#plantaAlta">Obra Civil(Planta Alta)</a></li>
+                    <li><a href="#extras">Extras</a></li>
+                </ul>
+            </div>
 
 
-<html>
-<head>
-    <meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../estilo.css">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    
-	<title>Proyectos</title>
-</head>
-
-<body>
-    <header>
-		<nav>
-			<a  title="inicio" href="../index.php"><img src= "../imagenes_vistas/black2.jpg" width="180" height="80"></a>
-			<a href="../levantamiento/levantamiento_view.php">Levantamiento</a>
-            <a href="../avance_diario/avance_view.php">Reporte diario</a>
-			<a href="../reporte_final/proyectos.php">Reporte Final</a>
-		</nav>
-	</header>
-    <div class="page-header bg-dark text-white text-center">
-		<span class="h4">Reporte Final</span>
-	</div>
-    
-<?php
-    error_reporting(0);
-    session_start();
-    include_once("../conexion.php");
-	$idproyect = $_REQUEST['id_proyect'];
-
-    $sentence = 'select nombre_proyecto from proyecto where id = ' . $idproyect;
-    $query = pg_query($conexion,$sentence );
-    $arr = pg_fetch_array($query, 0, PGSQL_NUM);
-?>
-
-    <div class="page-header bg-dark text-white text-center">
-		<span class="h4">Obra: <?php   echo $arr[0];   ?></span>
-	</div>
-    <br><br>
-
-    <span class="ir-arriba icon-arrow-up2">a</span>
-
-        <div>
-                <legend class="text-center header text-success">Proyecto</legend>
+            <div>
+                <legend id ="proyecto" class="text-center header text-success">Proyecto</legend>
                 <table class=".table-responsive-sm" BORDER>
-                        <?php
-                            $sentence = 'select * from proyecto where id = ' . $idproyect;
-                            $query = pg_query($conexion,$sentence );
-                            $arr = pg_fetch_array($query, 0, PGSQL_NUM);
-                        ?>
+                    <?php
+                        $sentence = 'select * from proyecto where id = ' . $idproyect;
+                        $query = pg_query($conexion,$sentence );
+                        $arr = pg_fetch_array($query, 0, PGSQL_NUM);
+                    ?>
                     <tr>
                         <td>Nombre de proyecto</td>
                         <td><?php   echo $arr[1];   ?></td>
@@ -119,12 +137,11 @@
                         <td>Ingeniero a cargo del Proyecto</td>
                         <td><?php   echo $arr[1];   ?></td>
                     </tr>
-
-                </table>
-                <br><br>
+                </table><br><br>
             </div>
+
             <div>
-                <legend class="text-center header text-success">Fachada</legend>
+                <legend id="fachada" class="text-center header text-success">Fachada</legend>
                 <table class="default" BORDER>  
                     <?php
                         $sentence = 'select * from ingreso where id_proyecto = ' . $idproyect;
@@ -152,7 +169,7 @@
             
             
             <div>
-                <legend class="text-center header text-success">Inversor</legend>
+                <legend id="inversor" class="text-center header text-success">Inversor</legend>
                 <table class="default" BORDER>
                     <?php
                         $sentence = 'select * from inversor where id_proyecto = ' . $idproyect;
@@ -187,7 +204,7 @@
             </div>
 
             <div>
-                <legend class="text-center header text-success">Centro de Carga</legend>
+                <legend id="centrocarga" class="text-center header text-success">Centro de Carga</legend>
                 <table class="default" BORDER>
                     <?php
                         $sentence = 'select * from centro_carga where id_proyecto = ' . $idproyect;
@@ -214,7 +231,7 @@
             </div>
 
             <div>
-                <legend class="text-center header text-success">Obra civil(Planta Baja)</legend>
+                <legend id="plantaBaja" class="text-center header text-success">Obra civil(Planta Baja)</legend>
                 <table class="default" BORDER>
                     <?php
                         $observacion ="";
@@ -248,7 +265,7 @@
             </div>
 
             <div>
-                <legend class="text-center header text-success">Tuberia</legend>
+                <legend id="tuberia" class="text-center header text-success">Tuberia</legend>
                 <table class="default" BORDER>
                     <?php
                         $sentence = 'select * from tuberia where id_proyecto = ' . $idproyect;
@@ -291,7 +308,7 @@
             </div>
 
             <div>
-                <legend class="text-center header text-success">Caja combinadora / Gabinete himel</legend>
+                <legend id="cajagabinete" class="text-center header text-success">Caja combinadora / Gabinete himel</legend>
                 <table class="default" BORDER>
                     <?php
                         $sentence = 'select * from caja_gabinete where id_proyecto = ' . $idproyect;
@@ -318,7 +335,7 @@
             </div>
 
             <div>
-                <legend class="text-center header text-success">Estructura de Paneles</legend>
+                <legend id="estructPaneles" class="text-center header text-success">Estructura de Paneles</legend>
                 <table class="default" BORDER>
                     <?php
                         $sentence = 'select * from estructura where id_proyecto = ' . $idproyect;
@@ -353,7 +370,7 @@
             </div>
 
             <div>
-                <legend class="text-center header text-success">Paneles</legend>
+                <legend id="paneles" class="text-center header text-success">Paneles</legend>
                 <table class="default" BORDER>
                     <?php
                         $observacion ="";
@@ -388,7 +405,7 @@
 
 
             <div>
-                <legend class="text-center header text-success">MC4</legend>
+                <legend id="mc4" class="text-center header text-success">MC4</legend>
                 <table class="default" BORDER>
                     <?php
                         $observacion ="";
@@ -421,7 +438,7 @@
             </div>
                     
             <div>
-                <legend class="text-center header text-success">Cinchado del cableado</legend>
+                <legend id="cinchCableado" class="text-center header text-success">Cinchado del cableado</legend>
                 <table class="default" BORDER>
                     <?php
                         $observacion ="";
@@ -446,7 +463,7 @@
             
 
             <div>
-                <legend class="text-center header text-success">Obra Civil(Planta Alta)</legend>
+                <legend id="plantaAlta" class="text-center header text-success">Obra Civil(Planta Alta)</legend>
                 <table class="default" BORDER>
                     <?php
                         $observacion ="";
@@ -470,7 +487,7 @@
             </div>
 
             <div>
-                <legend class="text-center header text-success">Extras</legend>
+                <legend id="extras" class="text-center header text-success">Extras</legend>
                 <table class="default" BORDER>
                     <?php
                         $observacion ="";
@@ -492,6 +509,15 @@
                         </tr>
                 </table>
             </div>
-            
-</body>
+            <br><br>
+        </div>
+
+        <div class="go-top-container">
+            <div class="go-top-button">
+                <i class="fas fa-chevron-up"></i>
+            </div>
+        </div>
+
+        <script src="../js/boton.js"></script>
+    </body>
 </html>
